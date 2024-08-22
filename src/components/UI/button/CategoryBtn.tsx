@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import cl from "./CategoryBtn.module.scss";
 
 interface IPropsBtnCategoria

@@ -73,7 +73,7 @@ export const Cases = () => {
             setFilteredProjects(projects?.items);
         } else {
             setSelectedCategory(category);
-            const sortProjects = projects?.items.filter((item, index) => {
+            const sortProjects = projects?.items.filter((item) => {
                 return item.categories[0].name === category;
             });
             setFilteredProjects(sortProjects);

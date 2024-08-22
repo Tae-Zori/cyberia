@@ -1,4 +1,3 @@
-import React from "react";
 type SetLoadingFncn = (loading: boolean) => void;
 type SetErrorFncn = (error: string) => void;
 type SetDataFncn = (data: null) => void;
