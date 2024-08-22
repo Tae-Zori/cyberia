@@ -1,0 +1,157 @@
+@import "../../style/App.scss";
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 396px;
+    background: #313341;
+    @include styleText(18px, $fontFiraSans, 21.6px, 400, $pozition: left);
+
+    &__wrapper {
+        width: 1240px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+        justify-items: center;
+    }
+    &__logoSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-self: start;
+        p {
+            width: 196px;
+            height: 44px;
+        }
+    }
+    &__logo {
+        @include sizeLogo(196px, 41.28px);
+    }
+    &__info {
+        width: 428px;
+        height: 114px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    &__address {
+        display: flex;
+        height: 114px;
+        justify-content: space-between;
+        gap: 56px;
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+    }
+
+    &__addressItems {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__navQuestions {
+        display: none;
+    }
+    &__navCrutch {
+        display: block;
+        height: 22px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .footer {
+        &__wrapper {
+            margin: 0px 30px;
+            width: 850px;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .footer {
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .footer {
+        height: 285px;
+        @include styleText(16px, $fontOpenSans, 17.7px, 400, $pozition: left);
+
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin: 0px;
+        }
+        &__logoSection {
+            height: 114px;
+            gap: 11.25px;
+            justify-self: center;
+            p {
+                display: flex;
+                align-items: end;
+            }
+        }
+        &__logo {
+            @include sizeLogo(114px, 30px);
+        }
+        &__info {
+            width: 100%;
+            justify-content: center;
+        }
+        &__address {
+            gap: 25px;
+        }
+        &__navCrutch {
+            height: 17px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        background: #2b2d3a;
+        font-size: 13px;
+        &__wrapper {
+            width: 327px;
+            display: flex;
+            flex-direction: column;
+        }
+        &__address {
+            gap: 15px;
+            height: 100px;
+            width: 100%;
+        }
+        &__logoSection {
+            align-items: center;
+            justify-content: center;
+            height: 98px;
+            p {
+                display: inline;
+                width: 207px;
+                height: 36px;
+                text-align: center;
+            }
+        }
+        &__logo {
+            @include sizeLogo(102px, 21.48px);
+        }
+        &__info {
+            margin-top: 38px;
+        }
+
+        &__navQuestions {
+            display: block;
+        }
+        &__navContacts {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../../style/App.scss";
+.btn {
+    width: 259px;
+    height: 62px;
+    top: 577px;
+    left: 472px;
+    padding: 20px 45px 20px 45px;
+    gap: 10px;
+    border: none;
+    border-radius: 85px;
+    background: $myBlue;
+    @include styleText(18px, $fontFiraSans, 21.6px, 400, center);
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: 0 7px 9px rgba(0, 0, 0, 0.15),
+            inset 0 3px 5px rgba(255, 255, 255, 0.53);
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 900px) {
+    .btn {
+        display: flex;
+        padding: 0;
+        width: 327px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+    }
+}

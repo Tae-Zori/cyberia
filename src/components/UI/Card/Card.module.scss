@@ -1,0 +1,111 @@
+@import "../../../style/App.scss";
+.card {
+    position: relative;
+    overflow: hidden;
+    width: 387px;
+    height: 378px;
+    &__img {
+        position: relative;
+        width: 387px;
+        height: 378px;
+        border-radius: 12px;
+        object-fit: cover;
+        z-index: 1;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__box {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 128px;
+        height: 128px;
+        top: 17px;
+        right: 17px;
+        z-index: 2;
+    }
+    &__decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #313341;
+        width: 122px;
+        height: 122px;
+        bottom: 0;
+        left: 0;
+        border-radius: 5px;
+        @include styleText(24px, $fontFiraSans, 28.8px, 600, center);
+    }
+    &__overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 327px;
+        height: 320px;
+
+        &__img {
+            width: 327px;
+            height: 320px;
+            &--reversed {
+                transform: scaleX(-1);
+            }
+        }
+        &__box {
+            display: none;
+        }
+        &__overlay {
+            border-radius: 12px;
+            position: absolute;
+            display: flex;
+            align-items: end;
+            width: 327px;
+            height: 320px;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            z-index: 2;
+            background: linear-gradient(
+                360deg,
+                #090b21 0%,
+                rgba(49, 51, 65, 0) 70.08%
+            );
+        }
+        &__mobileBox {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 29px 23px 29px;
+            background: transparent;
+            p {
+                @include styleText(13px, $fontOpenSans, 17.7px, 400, left);
+                margin-top: 6px;
+            }
+        }
+        &__titleMob {
+            @include styleText(18px, $fontRubik, 21.33px, 500, left);
+            margin-top: 10px;
+        }
+        &__decorationMob {
+            width: 17px;
+            height: 17px;
+            fill: #ffffff;
+            filter: brightness(0) invert(1) grayscale(1);
+        }
+    }
+}

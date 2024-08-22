@@ -1,0 +1,75 @@
+@import "./../../../style/variables";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #24252f;
+    z-index: 1010;
+
+    &__wrapper {
+        display: grid;
+        grid-template-rows: 32px 1fr 1fr;
+        margin: 42px 24px;
+    }
+    &__btnBox {
+        justify-self: end;
+        button {
+            background: transparent;
+            border: none;
+            transition: all 0.3s;
+            &:active {
+                transform: scale(0.9);
+                background: $myBlue;
+            }
+        }
+    }
+    &__nav {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.51px;
+        margin-bottom: 47px;
+        margin-top: 8px;
+    }
+    &__adress {
+        color: #9aa8ba;
+        border-top: 2px solid #2b2d3a;
+        border-bottom: 2px solid #2b2d3a;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.79px;
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin-top: 42px;
+            gap: 19px;
+        }
+        h2 {
+            font-size: 18px;
+            line-height: 24.51px;
+            margin-top: 38px;
+        }
+        a {
+            text-decoration: none;
+            color: #9aa8ba;
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .modal {
+        &__nav {
+            width: 184.42px;
+            font-size: 20px;
+            justify-self: center;
+        }
+        &__adress {
+            font-size: 18px;
+            justify-self: center;
+            h2 {
+                font-size: 20px;
+            }
+        }
+    }
+}

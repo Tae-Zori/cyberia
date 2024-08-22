@@ -1,0 +1,26 @@
+@mixin widthInput($w) {
+    width: $w;
+}
+@mixin heightInput($h) {
+    width: 100%;
+    height: $h;
+}
+@mixin sizeLogo($w, $h) {
+    width: $w;
+    height: $h;
+}
+@mixin styleText(
+    $size,
+    $family,
+    $line-height,
+    $weight: 400,
+    $pozition: center,
+    $color: #ffffff
+) {
+    font-family: $family, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    text-align: $pozition;
+    color: $color;
+}

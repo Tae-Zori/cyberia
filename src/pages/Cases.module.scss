@@ -1,0 +1,188 @@
+@import "../style/App.scss";
+.cases {
+    width: 100%;
+    font-family: $fontFiraSans;
+    display: flex;
+    flex-direction: column;
+    &__title {
+        margin-top: 130px;
+        @include styleText(48px, inherit, 57.6px, 600, left, #eff3ff);
+    }
+    &__categories {
+        margin-top: 65px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__projects {
+        margin-top: 52px;
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    &__form {
+        margin-top: 84px;
+        margin-bottom: 100px;
+    }
+    &__formTitle {
+        width: 361px;
+        height: 116px;
+        margin-bottom: 78px;
+        @include styleText(48px, inherit, 57.6px, 600, left, #eff3ff);
+        img {
+            display: none;
+        }
+    }
+    &__wrapperContent,
+    &__wrapperForm {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 1240px;
+    }
+    &__loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 350px;
+    }
+    &__error {
+        @include styleText(48px, inherit, 57.6px, 600, left, #eff3ff);
+        margin-top: 130px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1300px) {
+    .cases {
+        align-items: center;
+        &__projects {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__wrapperContent,
+        &__wrapperForm {
+            width: 850px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .cases {
+        &__title {
+            width: 600px;
+            margin-top: 41px;
+            font-size: 38px;
+            font-weight: 500;
+        }
+        &__categories {
+            margin-top: 57px;
+            width: 600px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            justify-items: center;
+        }
+        &__wrapperContent,
+        &__wrapperForm {
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        &__wrapperForm {
+            flex-direction: column;
+        }
+        &__projects {
+            grid-template-columns: 1fr;
+        }
+        &__form {
+            width: 327px;
+            margin-top: 51px;
+            margin-bottom: 32px;
+        }
+        &__formTitle {
+            width: 100%;
+            margin-bottom: 32.85px;
+            p {
+                font-size: 40px;
+            }
+        }
+        &__error {
+            font-size: 38px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .cases {
+        &__title {
+            @include styleText(21px, $fontRubik, 24.89px, 500, left, #eff3ff);
+            width: 327px;
+            margin-top: 29px;
+        }
+        &__categories {
+            margin-top: 47px;
+            width: 325px;
+            height: 83px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 7.6px;
+        }
+        &__projects {
+            margin-top: 40px;
+            gap: 13px;
+        }
+
+        &__wrapperForm {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background: #252631;
+            margin-top: 48px;
+        }
+        &__form {
+            background: transparent;
+            width: 327px;
+        }
+        &__formTitle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
+
+            p {
+                width: 208px;
+                height: 56px;
+                @include styleText(
+                    24px,
+                    $fontRubik,
+                    28pxpx,
+                    500,
+                    left,
+                    #eff3ff
+                );
+                white-space: pre-line;
+            }
+
+            img {
+                display: block;
+                width: 76px;
+                height: 70.15px;
+            }
+        }
+        &__error {
+            font-size: 21px;
+        }
+    }
+}

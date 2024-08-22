@@ -1,0 +1,24 @@
+@import "../../../style/App.scss";
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    @include styleText(18px, $fontFiraSans, 21.6px, 400, left, #9aa8ba);
+    white-space: nowrap;
+
+    color: #9aa8ba;
+    &__crumb {
+        margin-right: 5px;
+
+        &--active {
+            color: #c4d2e3;
+        }
+        a {
+            text-decoration: none;
+            color: #9aa8ba;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@import "../../../style/App.scss";
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+
+    &[data-form="other"] {
+        @include widthInput(387px);
+    }
+    &[data-form="message"] {
+        @include widthInput(100%);
+    }
+
+    &__lab {
+        font-size: 0.75rem;
+        position: relative;
+        left: 10px;
+        top: 0.7rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: #2b2b33dd;
+        width: fit-content;
+        @include styleText(18px, $fontFiraSans, 21.6px, 300, left, #eff3ff);
+        font-style: normal;
+    }
+
+    &__field {
+        @include styleText(18px, $fontFiraSans, 21.6px, 300, left, #eff3ff);
+        padding: 11px 10px;
+        box-sizing: border-box;
+        border: 1.5px #9aa8ba solid;
+        border-radius: 8px;
+        background: #31334100;
+        &[type="number"] {
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        &[data-form="other"] {
+            @include heightInput(61px);
+        }
+        &[data-form="message"] {
+            @include heightInput(139px);
+        }
+        &::placeholder {
+            color: transparent;
+        }
+    }
+
+    &__field:focus {
+        outline: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .input {
+        &[data-form="other"] {
+            @include widthInput(100%);
+        }
+        &[data-form="message"] {
+            @include widthInput(100%);
+        }
+        &__lab {
+            display: none;
+        }
+        &__field {
+            &[data-form="other"] {
+                @include heightInput(52px);
+            }
+            &[data-form="message"] {
+                @include heightInput(139px);
+                &::placeholder {
+                    position: absolute;
+                    top: 0;
+                    margin-top: 8px;
+                }
+            }
+            &::placeholder {
+                color: #eef3ff;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .input {
+        &[data-form="other"] {
+            @include widthInput(326px);
+        }
+        &[data-form="message"] {
+            @include widthInput(326px);
+        }
+        &__lab {
+            display: none;
+        }
+        &__field {
+            &[data-form="other"] {
+                @include heightInput(52px);
+            }
+            &[data-form="message"] {
+                @include heightInput(139px);
+                &::placeholder {
+                    position: absolute;
+                    top: 0;
+                    margin-top: 8px;
+                }
+            }
+            &::placeholder {
+                color: #eef3ff;
+                text-align: left;
+            }
+        }
+    }
+}

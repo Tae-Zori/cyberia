@@ -1,0 +1,27 @@
+@import "../style/App.scss";
+.home {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 140px;
+    @include styleText(48px, $fontFiraSans, 57.6px, 600, center);
+}
+@media (max-width: 1400px) {
+    .home {
+        margin-top: 70px;
+        p {
+            margin: 0px;
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
+        margin-top: 70px;
+        p {
+            margin: 0px;
+            font-size: 36px;
+        }
+    }
+}

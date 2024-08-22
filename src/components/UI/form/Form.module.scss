@@ -1,0 +1,140 @@
+@import "../../../style/variables";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.form {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        height: 251px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__otherInputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__btnBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 67px;
+    }
+
+    &__agree {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 41px;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21.6px;
+        text-align: left;
+        color: #eff3ff;
+        gap: 12px;
+    }
+
+    &__box {
+        position: relative;
+    }
+    &__checkmark {
+        position: relative;
+        top: 1px;
+        width: 25px;
+        height: 25px;
+        border: 1.5px solid #eff3ff;
+        border-radius: 2px;
+        transition: background 0.1s ease;
+        cursor: pointer;
+        display: block;
+        background: $bgGradient;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 8px;
+            width: 7px;
+            height: 14px;
+            opacity: 0;
+            transform: rotate(45deg) scale(0);
+            border-right: 2px solid #eff3ff;
+            border-bottom: 2px solid #eff3ff;
+            transition: all 0.3s ease;
+            transition-delay: 0.15s;
+        }
+    }
+
+    &__checkbox {
+        display: none !important;
+    }
+
+    &__checkbox:checked + .form__checkmark {
+        border-color: transparent;
+        background: $myBlue;
+    }
+
+    &__checkbox:checked + .form__checkmark:after {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+    }
+    &__agreeMessage {
+        display: flex;
+        margin-top: 26.09px;
+        width: 100%;
+        height: 36px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 17.7px;
+        text-align: center;
+        color: #eef3ff;
+    }
+}
+
+@media (max-width: 1300px) {
+    .form {
+        &__container {
+            height: 100%;
+            flex-wrap: wrap;
+        }
+        &__otherInputs {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .form {
+        &__container {
+            height: 100%;
+        }
+
+        &__btnBox {
+            margin-top: 50px;
+        }
+
+        &__otherInputs {
+            gap: 22px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .form {
+        &__btnBoxMobile {
+            margin-top: 42px;
+        }
+    }
+}
